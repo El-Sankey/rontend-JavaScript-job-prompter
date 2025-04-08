@@ -1,6 +1,6 @@
 const departments = {
     marketing: {
-        description: "Marketing omvat verschillende strategieën en activiteiten gericht op het promoten van producten, diensten of merken bij het doelpubliek. Het omvat het begrijpen van de behoeften en voorkeuren van consumenten, het uitvoeren van marktonderzoek, het ontwikkelen van marketingplannen en het implementeren van tactieken om potentiële klanten te bereiken en te betrekken. Marketingprofessionals analyseren markttrends, identificeren doelmarkten en creëren overtuigende boodschappen en communicatiestrategieën om merkbekendheid op te bouwen, klantenwerving te stimuleren en klantloyaliteit te bevorderen",
+        description: "Marketing omvat verschillende strategieën en activiteiten gericht op het promoten van producten, diensten of merken bij het doelpubliek. Het omvat het begrijpen van de behoeften en voorkeuren van consumenten, het uitvoeren van marktonderzoek, het ontwikkelen van marketingplannen en het implementeren van tactieken om potentiële klanten te bereiken en te betrekken. Marketingprofessionals analyseren markttrends, identificeren doelmarkten en creëren overtuigende boodschappen en communicatiestrategieën om merkbekendheid op te bouwen, klantenwerving te stimuleren en klantloyaliteit te bevorderen.",
         numberOfEmployees: 45,
         jobs: [
             {
@@ -47,7 +47,7 @@ const departments = {
             }
         ]
     },
-    "customer-service": {
+     customerService: {
         description: "Klantenservice richt zich op het bieden van uitzonderlijke ondersteuning en assistentie aan klanten vóór, tijdens en na hun interacties met een bedrijf. Het draait om het opbouwen van positieve relaties met klanten en ervoor zorgen dat ze tevreden zijn door hun vragen, zorgen en behoeften aan te pakken. Klantenserviceprofessionals fungeren als de vertegenwoordigers van een bedrijf, als het eerste aanspreekpunt voor klanten. Ze maken gebruik van verschillende communicatiekanalen, zoals telefoongesprekken, e-mails, live chats of persoonlijke interacties, om klanten op een vriendelijke, efficiënte en empathische manier te helpen.",
         numberOfEmployees: 32,
         jobs: [
@@ -70,5 +70,33 @@ const departments = {
         ],
     }
 }
+//___________________________________________________________________________________________________//
 
-console.log(departments);
+// Opdracht 1a: Log het aantal medewerkers van de sales-afdeling in de console, in het volgende format: "De afdeling Sales heeft [x] medewerkers"
+
+console.log('De afdeling Sales heeft ' + departments.sales.numberOfEmployees + ' medewerkers ');
+
+
+// Opdracht 1b: Log de afdeling-beschrijving van de marketingafdeling in de console, in het volgende format: " Marketing is een leuke afdeling om te werken. [beschrijving]"
+
+console.log('Marketing is een leuke afdeling om te werken. ' + departments.marketing.description );
+
+
+// Opdracht 1d: Log de beschrijving van de functie "Verkoopmanager" in de console, in het volgende format: "Sales is een uitdagende afdeling om te werken als Verkoopmanager. [beschrijving functie Verkoopmanager]"
+
+console.log('De afdeling Customer Service heeft ' +departments.customerService.numberOfEmployees+ ' medewerkers')
+console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager ' + departments.sales.jobs[1].description);
+
+
+// Opdracht 2a: Gebruik bovenstaand voorbeeld en pas het zo aan dat de browser jou de volgende vraag stelt: Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]. Het antwoord dat jij invoert, log je uiteraard in de console. Tip: geef jouw input-prompt altijd in kleine letters ("marketing" in plaats van "Marketing" of "MARKETING"), dit voorkomt problemen in het script.
+
+const usnoerInput = prompt('Over werlke afdeling wil je meer informatie? kies uit: [marketing / sales / custumer-service]');
+console.log(userInput);
+
+
+// Opdracht 2b: tijd voor het echte werk! Op basis van wat de gebruiker invoert ("marketing", "sales" of "customer service") willen wij een beschrijving van die afdeling in de console loggen. Hiervoor typ je natuurlijk niet handmatig de beschrijvingen over! Je spreekt ze aan via het departments-object: hiervoor zul je dus een beslissingsstructuur moeten bouwen. Ongeacht de gekozen afdeling, log je de uitkomst in het volgende format: "Je koos [ingevoerde keuze]. [beschrijving afdeling]"
+
+switch (userInput) {
+
+}
+
