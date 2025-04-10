@@ -47,7 +47,7 @@ const departments = {
             }
         ]
     },
-     customerService: {
+     "customer-service": {
         description: "Klantenservice richt zich op het bieden van uitzonderlijke ondersteuning en assistentie aan klanten vóór, tijdens en na hun interacties met een bedrijf. Het draait om het opbouwen van positieve relaties met klanten en ervoor zorgen dat ze tevreden zijn door hun vragen, zorgen en behoeften aan te pakken. Klantenserviceprofessionals fungeren als de vertegenwoordigers van een bedrijf, als het eerste aanspreekpunt voor klanten. Ze maken gebruik van verschillende communicatiekanalen, zoals telefoongesprekken, e-mails, live chats of persoonlijke interacties, om klanten op een vriendelijke, efficiënte en empathische manier te helpen.",
         numberOfEmployees: 32,
         jobs: [
@@ -72,6 +72,8 @@ const departments = {
 }
 //___________________________________________________________________________________________________//
 
+                                        // Opdracht 1 - Gegevens aanspreken
+
 // Opdracht 1a: Log het aantal medewerkers van de sales-afdeling in de console, in het volgende format: "De afdeling Sales heeft [x] medewerkers"
 
 console.log('De afdeling Sales heeft ' + departments.sales.numberOfEmployees + ' medewerkers ');
@@ -84,19 +86,57 @@ console.log('Marketing is een leuke afdeling om te werken. ' + departments.marke
 
 // Opdracht 1d: Log de beschrijving van de functie "Verkoopmanager" in de console, in het volgende format: "Sales is een uitdagende afdeling om te werken als Verkoopmanager. [beschrijving functie Verkoopmanager]"
 
-console.log('De afdeling Customer Service heeft ' +departments.customerService.numberOfEmployees+ ' medewerkers')
+console.log('De afdeling Customer Service heeft ' +departments['customer-service'].numberOfEmployees+ ' medewerkers')
 console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager ' + departments.sales.jobs[1].description);
 
 
+                                        // Opdracht 2 - prompten en beslissen
+
 // Opdracht 2a: Gebruik bovenstaand voorbeeld en pas het zo aan dat de browser jou de volgende vraag stelt: Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]. Het antwoord dat jij invoert, log je uiteraard in de console. Tip: geef jouw input-prompt altijd in kleine letters ("marketing" in plaats van "Marketing" of "MARKETING"), dit voorkomt problemen in het script.
 
-const usnoerInput = prompt('Over werlke afdeling wil je meer informatie? kies uit: [marketing / sales / custumer-service]');
+let userInput;
+userInput = prompt('Over werlke afdeling wil je meer informatie? kies uit: "marketing" "sales" of "customer-service"');
 console.log(userInput);
 
 
-// Opdracht 2b: tijd voor het echte werk! Op basis van wat de gebruiker invoert ("marketing", "sales" of "customer service") willen wij een beschrijving van die afdeling in de console loggen. Hiervoor typ je natuurlijk niet handmatig de beschrijvingen over! Je spreekt ze aan via het departments-object: hiervoor zul je dus een beslissingsstructuur moeten bouwen. Ongeacht de gekozen afdeling, log je de uitkomst in het volgende format: "Je koos [ingevoerde keuze]. [beschrijving afdeling]"
 
-switch (userInput) {
+// Opdracht 2b: tijd voor het echte werk! Op basis van wat de gebruiker invoert ("marketing", "sales" of "customer-service") willen wij een beschrijving van die afdeling in de console loggen. Hiervoor typ je natuurlijk niet handmatig de beschrijvingen over! Je spreekt ze aan via het departments-object: hiervoor zul je dus een beslissingsstructuur moeten bouwen. Ongeacht de gekozen afdeling, log je de uitkomst in het volgende format: "Je koos [ingevoerde keuze]. [beschrijving afdeling]"
 
+if (userInput === "marketing") {
+    console.log("je koos", (userInput), departments.marketing.description);
+} else if (userInput === "sales") {
+    console.log("je koos", (userInput), + departments.sales.description);
+} else if (userInput === "customer-service") {
+    console.log("je koos", (userInput) + departments["customer-service"].description);
 }
 
+
+
+// Opdracht 2c: test of alles werkt door alle mogelijke afdelingen een keertje te voeren en te checken of je de gewenste output krijgt. Maak jouw beslisboom nu extra gebruiksvriendelijk door de melding "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen." in de console te laten zien wanneer de gebruiker een spelfout maakt of iets verkeerds invoert. Tip: je kunt hiervoor console.error() gebruiken in plaats van console.log().
+
+
+switch (userInput) {
+    case "marketing":
+        console.log("je koos " + departments.marketing.description);
+        break;
+
+    case "sales":
+        console.log("je koos " + departments.sales.description);
+        break;
+
+    case "customer-service":
+        console.log("je koos " + departments["customer-service"].description);
+        break;
+
+    default:
+        console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+}
+
+                                        // Opdracht 3 - een nieuwe prompt
+// Opdracht 3a: We gaan er voor nu even vanuit dat de gebruiker de afdeling 'marketing' heeft gekozen. Schrijf een nieuwe prompt die de gebruiker om het volgende vraagt:
+// Je koos marketing. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.
+// 0: [functietitel marketing 0],
+//     1: [functietitel marketing 1],
+//     2: [functietitel marketing 2],
+//     3: [functietitel marketing 3]
+// Hierbij typ je de functietitels van Marketing niet handmatig over, maar spreek je ze aan via de marketing-property in het departments-object.
