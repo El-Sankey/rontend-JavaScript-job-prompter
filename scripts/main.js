@@ -90,9 +90,11 @@ console.log('De afdeling Customer Service heeft ' +departments['customer-service
 console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager ' + departments.sales.jobs[1].description);
 
 
+
                                         // Opdracht 2 - prompten en beslissen
 
 // Opdracht 2a: Gebruik bovenstaand voorbeeld en pas het zo aan dat de browser jou de volgende vraag stelt: Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]. Het antwoord dat jij invoert, log je uiteraard in de console. Tip: geef jouw input-prompt altijd in kleine letters ("marketing" in plaats van "Marketing" of "MARKETING"), dit voorkomt problemen in het script.
+
 
 let userInput;
 userInput = prompt('Over werlke afdeling wil je meer informatie? kies uit: "marketing" "sales" of "customer-service"');
@@ -102,11 +104,16 @@ console.log(userInput);
 
 // Opdracht 2b: tijd voor het echte werk! Op basis van wat de gebruiker invoert ("marketing", "sales" of "customer-service") willen wij een beschrijving van die afdeling in de console loggen. Hiervoor typ je natuurlijk niet handmatig de beschrijvingen over! Je spreekt ze aan via het departments-object: hiervoor zul je dus een beslissingsstructuur moeten bouwen. Ongeacht de gekozen afdeling, log je de uitkomst in het volgende format: "Je koos [ingevoerde keuze]. [beschrijving afdeling]"
 
+
 if (userInput === "marketing") {
     console.log("je koos", (userInput), departments.marketing.description);
-} else if (userInput === "sales") {
+}
+
+else if (userInput === "sales") {
     console.log("je koos", (userInput), + departments.sales.description);
-} else if (userInput === "customer-service") {
+}
+
+else if (userInput === "customer-service") {
     console.log("je koos", (userInput) + departments["customer-service"].description);
 }
 
@@ -132,11 +139,68 @@ switch (userInput) {
         console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
 }
 
+
+
                                         // Opdracht 3 - een nieuwe prompt
-// Opdracht 3a: We gaan er voor nu even vanuit dat de gebruiker de afdeling 'marketing' heeft gekozen. Schrijf een nieuwe prompt die de gebruiker om het volgende vraagt:
-// Je koos marketing. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.
-// 0: [functietitel marketing 0],
+
+// Opdracht 3a: We gaan er voor nu even vanuit dat de gebruiker de afdeling 'marketing' heeft gekozen. Schrijf een nieuwe prompt die de gebruiker om het volgende vraagt: Je koos marketing. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.
+//     0: [functietitel marketing 0],
 //     1: [functietitel marketing 1],
 //     2: [functietitel marketing 2],
 //     3: [functietitel marketing 3]
 // Hierbij typ je de functietitels van Marketing niet handmatig over, maar spreek je ze aan via de marketing-property in het departments-object.
+
+userInput = prompt('Je koos marketing. Over welke funtie wil je meer weten? Voer een getal tussen 0 en 3 in.')
+
+
+// Opdracht 3b: Op basis van wat de gebruiker invoert (0, 1, 2, of 3) willen wij de beschrijving van de bijbehorende marketing-functie-titel en marketing-functie-beschrijving in de console loggen. Dit doe je in het volgende format:
+
+                // "Je koos [titel ingevoerde marketing functie].
+
+if (userInput === 0) {
+    console.log('Je koos ' + departments.marketing.jobs.title[0]);
+}
+
+else if (userInput === 1) {
+    console.log('Je koos ' + departments.marketing.jobs.title[1]);
+}
+
+else if (userInput === 2) {
+    console.log('Je koos ' + departments.marketing.jobs.title[2]);
+}
+
+else if (userInput === 3) {
+    console.log('Je koos ' + departments.marketing.jobs.title[3]);
+}
+
+                //Een uitdagende rol! [beschrijving ingevoerde marketing functie]"
+
+
+if (userInput === 0) {
+    console.log(departments.marketing.jobs.title[0] + ' Je koos ');
+}
+
+else if (userInput === 1) {
+    console.log(departments.marketing.jobs.title[1] + ' Je koos ');
+}
+
+else if (userInput === 2) {
+    console.log(departments.marketing.jobs.title[2] + ' Je koos ');
+}
+
+else if (userInput === 3) {
+    console.log(departments.marketing.jobs.title[3] + ' Je koos');
+}
+
+// Opdracht 3c: test of alles werkt door alle mogelijke getallen een keertje te voeren in de prompt en te checken of je de gewenste output krijgt. Maak jouw beslisboom nu extra gebruiksvriendelijk door de melding "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen." in de console te laten zien wanneer de gebruiker iets anders invoert dan 0 - 3.
+
+else {
+    console.error('Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.')
+}
+
+
+
+                                        // Opdracht 4 - samenvoegen
+// /Opdracht 4a: Zet alle code uit opdracht 2 weer aan. Comment de code uit opdracht 3 uit. Log de afdeling-beschrijving van de ingevoerde afdeling uit de eerste prompt in de console, in het volgende format: "[afdeling-naam] is een leuke afdeling om te werken. Er werken op dit moment [aantal] medewerkers." Tip: gebruik hiervoor de blokhaak notatie. Bekijk hier een voorbeeld van het gebruik van een variabele als object-key.
+
+
